@@ -1,0 +1,150 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liber Finanças</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="dolar-neon.ico">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Chega de viver no sufoco: descubra o caminho real para sair das dívidas e conquistar <span>liberdade financeira!</span></h1>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <img src="hero-image.png" alt="Ilustração de uma pessoa celebrando a superação financeira" class="hero-image">
+                <div class="hero-text">
+                    <h2>Comece sua jornada com menos de R$ 35</h2>
+                    <a href="#products" class="cta-button hero-cta">Quero mudar de vida agora</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products-section">
+            
+            <div class="product-card" id="ebook">
+                <img src="ebook-cover.png" alt="Capa do Ebook 10 Passos Para Virar o Jogo" class="product-image">
+                <h3>Ebook "10 Passos Para Virar o Jogo"</h3>
+                <p class="product-description">Um ebook prático, com linguagem simples, para você que está endividado e quer dar o primeiro passo para a transformação.</p>
+                <ul class="benefits">
+                    <li><i class="fas fa-search-dollar"></i> Entenda por que você se endividou</li>
+                    <li><i class="fas fa-piggy-bank"></i> Organize suas finanças mesmo ganhando pouco</li>
+                    <li><i class="fas fa-handshake"></i> Negocie com bancos e corte gastos invisíveis</li>
+                    <li><i class="fas fa-chart-line"></i> Estratégias para aumentar sua renda</li>
+                </ul>
+                <div class="price">R$ 34,90</div>
+                <a href="#checkout" class="cta-button product-cta" data-product="Ebook '10 Passos Para Virar o Jogo'" data-price="34.90">Quero o Ebook Agora</a>
+            </div>
+
+          
+
+            <div class="product-card high-ticket">
+                <div class="badge premium">Premium</div>
+                 <h3>Mentoria VIP "Liberdade Financeira VIP"</h3>
+                 <div class="testimonial-vip">
+                    <img src="testimonial-3.png" alt="Cliente da Mentoria VIP Satisfeito">
+                    <blockquote>
+                        "A mentoria foi um divisor de águas. O plano personalizado me deu clareza e confiança para quitar minhas dívidas em tempo recorde."
+                    </blockquote>
+                </div>
+                <p class="product-description">A solução definitiva para quem busca acompanhamento individual e um plano financeiro 100% personalizado para resultados acelerados.</p>
+                <div class="price">R$ 1.119,90</div>
+                <a href="#checkout" class="cta-button product-cta" data-product="Mentoria VIP 'Liberdade Financeira VIP'" data-price="147.90">Quero Mentoria Exclusiva</a>
+            </div> 
+            
+            <div class="product-card core">
+                <div class="badge">Evolução</div>
+                 <h3>Curso "O Método Definitivo"</h3>
+                <img src="influencer-video-placeholder.png" alt="Apresentação do curso em vídeo" class="product-image video-placeholder">
+                <p class="product-description">Aprofunde cada passo do ebook com uma estrutura prática e videoaulas detalhadas com nosso especialista.</p>
+                 <ul class="benefits">
+                    <li><i class="fas fa-video"></i> Aulas passo a passo em vídeo</li>
+                    <li><i class="fas fa-clipboard-list"></i> Estrutura prática e aplicável</li>
+                    <li><i class="fas fa-lightbulb"></i> Estratégias reais para resultados duradouros</li>
+                </ul>
+                <div class="price">R$ 147,90</div>
+                <a href="#checkout" class="cta-button product-cta" data-product="Curso 'O Método Definitivo'" data-price="87.90">Quero Aprender com o Curso</a>
+            </div>
+        </section>
+
+        <section class="social-proof">
+            <h2>Quem já começou a virada aprova</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <img src="testimonial-1.png" alt="Foto de Maria S.">
+                    <p>"Nunca pensei que entender de finanças seria tão simples. O ebook abriu minha mente e me deu o controle do meu dinheiro de volta!"</p>
+                    <span>- Maria S.</span>
+                </div>
+                <div class="testimonial">
+                    <img src="testimonial-2.png" alt="Foto de João P.">
+                    <p>"O curso é direto ao ponto. As aulas em vídeo fizeram toda a diferença para eu colocar as estratégias em prática e ver resultado."</p>
+                    <span>- João P.</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="checkout" class="checkout-section hidden">
+            <div class="checkout-container">
+                <h2><i class="fas fa-shopping-cart"></i> Finalize sua Compra</h2>
+                <div id="checkout-summary">
+                    <p>Você está adquirindo:</p>
+                    <h3 id="product-name-checkout"></h3>
+                    <div class="price-checkout">R$ <span id="product-price-checkout"></span></div>
+                </div>
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required placeholder="Seu nome como aparece no cartão">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email de Acesso</label>
+                        <input type="email" id="email" name="email" required placeholder="Enviaremos seu acesso para este email">
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Número do Cartão</label>
+                        <input type="text" id="card-number" name="card-number" required placeholder="0000 0000 0000 0000" maxlength="19">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Validade</label>
+                            <input type="text" id="expiry" name="expiry" required placeholder="MM/AA" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" name="cvc" required placeholder="123" maxlength="4">
+                        </div>
+                    </div>
+                    <button type="submit" class="cta-button">Pagar Agora e Transformar Minha Vida</button>
+                </form>
+                <div id="payment-success" class="hidden">
+                     <h3><i class="fas fa-check-circle"></i> Pagamento Aprovado!</h3>
+                     <p>Parabéns por dar o primeiro passo! O acesso ao seu material foi enviado para o seu email.</p>
+                     <p>Sua jornada de transformação começa agora.</p>
+                </div>
+                <p class="secure-info"><i class="fas fa-lock"></i> Pagamento 100% seguro.</p>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="final-cta-content">
+                <h3>Não espere mais uma conta atrasada.</h3>
+                <p>Comece hoje mesmo sua virada financeira.</p>
+                <a href="#products" class="cta-button">Sim, quero mudar minha vida financeira</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Liber Finanças. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
