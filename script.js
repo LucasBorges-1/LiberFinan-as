@@ -1,15 +1,12 @@
-// Simple script for smooth scrolling for non-product links
+// Smooth scrolling para links que não sejam botões de compra
 document.querySelectorAll('a[href^="#"]:not(.product-cta)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     });
 });
@@ -24,36 +21,39 @@ const paymentSuccessEl = document.getElementById('payment-success');
 
 productCtas.forEach(button => {
     button.addEventListener('click', (e) => {
-        e.preventDefault();
+        e.preventDefault(); // impede a âncora de agir antes
 
-        // Get product info from data attributes
+        // Pega dados do produto
         const name = button.dataset.product;
         const price = button.dataset.price;
 
-        // Populate checkout section
+        // Atualiza os campos do checkout
         productNameEl.textContent = name;
         productPriceEl.textContent = price;
-        
-        // Reset form view
+
+        // Reseta o formulário
+        paymentForm.reset();
         paymentForm.style.display = 'flex';
         paymentSuccessEl.classList.add('hidden');
-        paymentForm.reset();
 
-        // Show checkout section
+        // Mostra a seção do checkout
         checkoutSection.classList.remove('hidden');
 
-        // Scroll to checkout
+        // Rola até o checkout
         checkoutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 
-// Card number formatting
+// Formatação número do cartão
 const cardNumberInput = document.getElementById('card-number');
 cardNumberInput.addEventListener('input', (e) => {
-    e.target.value = e.target.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    e.target.value = e.target.value
+        .replace(/[^\d]/g, '')
+        .replace(/(.{4})/g, '$1 ')
+        .trim();
 });
 
-// Expiry date formatting
+// Formatação data de validade
 const expiryInput = document.getElementById('expiry');
 expiryInput.addEventListener('input', (e) => {
     let value = e.target.value.replace(/[^\d]/g, '');
@@ -63,7 +63,7 @@ expiryInput.addEventListener('input', (e) => {
     e.target.value = value;
 });
 
-// Payment form submission simulation
+// Simulação envio do pagamento
 paymentForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -78,17 +78,13 @@ paymentForm.addEventListener('submit', (e) => {
     });
 
     if (isValid) {
-        // Hide form, show success message
         paymentForm.style.display = 'none';
         paymentSuccessEl.classList.remove('hidden');
-        
-        // Play success sound
         playSuccessSound();
     }
 });
 
-
-// WebAudio API for sound
+// WebAudio API para som
 let audioContext;
 let successBuffer;
 
@@ -105,14 +101,14 @@ async function loadSuccessSound() {
             const arrayBuffer = await response.arrayBuffer();
             successBuffer = await audioContext.decodeAudioData(arrayBuffer);
         } catch (error) {
-            console.error('Error loading sound:', error);
+            console.error('Erro ao carregar som:', error);
         }
     }
 }
 
 function playSuccessSound() {
     if (!audioContext || !successBuffer) {
-        console.log('Audio not ready');
+        console.log('Áudio não carregado');
         return;
     }
     const source = audioContext.createBufferSource();
@@ -121,8 +117,6 @@ function playSuccessSound() {
     source.start(0);
 }
 
-// Initialize audio on first user interaction (e.g., clicking a CTA)
-// This is required by modern browsers to allow audio playback.
 document.body.addEventListener('click', () => {
     if (!audioContext) {
         initAudio();
