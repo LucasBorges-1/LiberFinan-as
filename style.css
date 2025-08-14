@@ -336,15 +336,22 @@ img {
 .form-row {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap; /* evita extrapolar */
 }
 
 .form-row .form-group {
-    flex: 1;
+    flex: 1 1 120px; /* largura mínima, flexível */
 }
 
-#payment-form .cta-button {
-    margin-top: 1rem;
-    width: 100%;
+.form-row .form-group input {
+    width: 100%; /* garante que o input respeite o container */
+    box-sizing: border-box; /* inclui padding no cálculo */
+}
+
+@media (max-width: 480px) {
+    .form-row {
+        flex-direction: column; /* empilha */
+    }
 }
 
 #payment-success {
