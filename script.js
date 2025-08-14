@@ -123,3 +123,20 @@ document.body.addEventListener('click', () => {
         loadSuccessSound();
     }
 }, { once: true });
+
+// Course modules toggle
+const modulesToggle = document.querySelector('.modules-toggle');
+if (modulesToggle) {
+    modulesToggle.addEventListener('click', () => {
+        const modulesList = document.querySelector('.modules');
+        const icon = modulesToggle.querySelector('i');
+        modulesList.classList.toggle('hidden');
+        if (modulesList.classList.contains('hidden')) {
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        } else {
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        }
+    });
+}
